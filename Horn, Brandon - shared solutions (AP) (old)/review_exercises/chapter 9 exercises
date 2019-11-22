@@ -1,0 +1,95 @@
+R9.1
+
+(a) requires a cast because i could point to something to which
+c cannot point
+
+(b) does not require a cast because j can point to anything to
+which c can point
+
+(c) requires a cast because j could point to something to which
+i cannot point
+
+
+R9.2
+
+(a) will not throw an exception because the object i points to
+is of type C
+
+(b) will not throw an exception because the object i points to
+is of type C, which implements J
+
+(c) will not throw an exception because a reference of type I
+can point to null.
+
+None of these will throw an exception.
+
+
+R9.3
+
+a and c are legal
+
+(a) is legal because e can point to anything to which sub points
+
+(b) is not legal because e can point to things that sub cannot point to
+
+(c) is legal because e points to null, to which a Sandwich reference can refer
+
+(d) is not legal because a Rectangle is not a Sandwich
+
+(e) is not legal because Rectangle does not implement Edible
+
+(f) is not legal because a Rectangle cannot be cast to Edible. (A cast
+tries to change the reference type, not the object type.)
+
+(g) is not legal because the e can't point to a Rectangle. (The
+cast works but it doesn't solve the problem.)
+
+(h) is not legal because e can't point to a Rectangle. (The cast
+works though.) 
+
+
+R9.4
+When you cast a reference type, you agree to the risk that an
+exception will be thrown if the cast is not valid at run time.
+
+When you cast a numeric type, you agree to a potential loss of
+information.
+
+
+R9.6
+
+(a) is legal because the types are exactly the same
+
+(b) is legal because Rectangle implements Shape
+
+(c) is not legal because a Rectangle is not a String
+
+(d) is not legal because Rectangle does not implement ActionListener
+
+(e) is not legal because Rectangle does not implement Measurable
+
+(f) is legal because Rectangle implements Serializable
+
+(g) is legal because a Rectangle is an object
+
+
+R9.7
+
+The exact type of the object to which s refers is not known until run time.
+The getBounds() method that is actually run can only be determined at run time.
+
+
+R9.9
+
+To use the DataSet class from 9.1 the Employee class must implement Measurable.
+The getMeasure method must return the employee's salary.
+
+To use the DataSet class from 9.4, you must create an EmployeeMeasurer that implements
+the Measurer interface and measures employees based on salary.
+
+The first approach is likely to be easier if you are implementing the Employee
+class yourself and making a getMeasure method that returns the salary does not
+conflict with any other requirements.
+
+The second approach is easier if someone else wrote the Employee class or if
+implementing Measurable would conflict with other requirements.

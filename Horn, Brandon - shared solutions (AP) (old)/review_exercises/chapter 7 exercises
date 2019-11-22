@@ -1,0 +1,24 @@
+R7.17
+a true (at least the references are the same type)
+b true
+c false
+d true
+f false
+g false (usually)
+h false (at least the references are the same type)
+
+R7.13
+a find the location of a given value
+b sort an array
+c create an array containing random values in a specified range
+
+R7.15
+Parallel arrays are arrays of the same length where corresponding elements
+contain related data. They can be easily avoided by making a class that stores
+all desired fields then making an array of objects of that class type.
+
+R7.18
+b true
+d false in the sense that once you declare the ArrayList as a specific type
+it can only hold values of that type. ArrayLists also can't store values of
+primitive type.

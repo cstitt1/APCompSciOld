@@ -1,0 +1,84 @@
+R6.2
+
+0000000000
+0123456789
+0246802468
+0369258147
+0482604826
+0505050505
+0628406284
+0741852963
+0864208642
+0987654321
+ 
+The outer loop controls the number of rows (10)
+while the inner loop controls what will be printed in each row.
+
+
+R6.3
+
+a. 10 times (once each from 1 to 10)
+b. 10 times (once each from 0 to 9)
+c. 10 times (once each from 10 to 1)
+d. 21 times (once each from -10 to 10)
+e. Infinitely (note the i++)
+f. 11 times (-10, -8, -6, -4, -2, 0, 2, 4, 6, 8, 10)
+g. 7 times (-10, -7, -4, -1, 2, 5, 8)
+
+
+R6.4
+
+int s = 0;
+int i = 1;
+while(i <= 10)
+{
+  s = s + i;
+  i++;
+}
+
+
+R6.7 (preferred solution)
+
+boolean done = false;
+
+while(!done)
+{
+  done = true;
+  
+  String name = /* read name */;
+  if(isOk(name))
+  {
+    int length = /* read length */;
+    if(isOk(name, length))
+    {
+      /* convert length to meters & print data */
+      done = false;
+    }
+  }
+}
+
+
+R6.11
+
+Symmetric bounds are more natural in loops that run a fixed number of times.
+For example, the following loop is intended to run 72 times.
+
+for(int years = 1; years <= 72; years++)
+{
+  System.out.println("You're " + years + " year" +
+    (years != 1 ? "s" : "") + " old!");
+  
+  System.out.println("Happy birthday!");
+}
+
+Asymmetric bounds are usually more natural in loops that traverse data structures.
+For example, the following loop traverses the testScores array.
+
+int[] testScores = {75, 90, 80, 100};
+
+double sum = 0;
+
+for(int i = 0; i < testScores.length; i++)
+  sum += testScores[i];
+
+System.out.println("Average: " + (sum / testScores.length));

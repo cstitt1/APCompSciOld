@@ -1,0 +1,92 @@
+R10.2
+
+SavingsAccount has a single constructor that takes an interest rate.
+It does not inherit constructors from BankAccount.
+
+SavingsAccount inherits getBalance, deposit, and withdraw from BankAccount.
+
+SavingsAccount adds its own addInterest method.
+
+R10.4
+
+Superclass is listed first, followed by subclass
+
+a. Employee, Manager
+b. Polygon, Triangle
+c. Student, GraduateStudent
+d. Person, Student
+e. Employee, GraduateStudent (assuming that a graduate student is an employee)
+f. BankAccount, CheckingAccount
+g. Vehicle, Car
+h. Vehicle, Minivan
+i. Car, Minivan (assuming that a minivan is a car)
+j. Vehicle, Truck
+
+R10.7
+
+Vehicle ->	Car		->	Coupe
+					->	Sedan
+					->	Minivan
+		->	Truck	->	PickupTruck
+					->	SportUtilityVehicle
+		->	Bicycle	->	Motorcycle
+
+R10.1
+
+0 -> 5000 -> 2500 -> 2750
+
+R10.3
+
+Need cast to convert a superclass reference into a subclass reference.
+
+Ex:
+BankAccount b = new SavingsAccount(10);
+SavingsAccount s = (SavingsAccount) b;
+
+Can always convert a subclass reference to a superclass reference.
+
+Ex:
+SavingsAccount s = new SavingsAccount(10);
+BankAccount b = s;
+
+R10.5
+Legal: a, d
+
+R10.9
+(a) should have been part of the question
+Return true: b, e, f, g
+
+R10.10
+super can be used to call a superclass constructor or to call a superclass method.
+
+R10.11
+1 is polymorphic since Java determines at run time whether to run the method from B or D.
+2 is resolved at compile time because a call to super.g must run method g from B.
+
+R10.12
+endOfMonth is an overloaded method. Specific method run is determined at compile time
+(early binding) by examining the number, order, and type of parameters.
+
+The call to getBalance is resolved by late binding based on the actual type of object.
+(This is true even though both CheckingAccount and SavingsAccount both inherit
+getBalance from BankAccount.)
+
+R10.14
+Instance fields should have a private access specifier. This is also true for static
+fields. Static final fields may be safely declared as public where desirable but may
+also be declared as private if they are only used within the class.
+
+R10.15
+Instance methods should be public if they are intended for use by client classes,
+private if they are intended only for use within their own class. This is also true
+for static methods.
+
+R10.17
+Public fields are dangerous in the sense that they can be freely modified by client
+classes. In some cases, even allowing other classes to read the values of fields is
+not desirable.
+
+Modifications to public static fields affect all objects of the class as opposed to
+modifications to public instance fields which affect only individual objects.
+
+Both types of modifications can cause unintended behavior.
